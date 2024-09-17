@@ -38,7 +38,7 @@ public class AllocateSubjects implements Model {
                 teacher_info.next();
 
                 String teacher_name = teacher_info.getString(1);
-                int exp = teacher_info.getInt(2);
+                int exp = teacher_info.getInt(2); 
 
                 Teacher teacher = new Teacher(teacher_name, username, Arrays.asList(pref.getString(2), pref.getString(3), pref.getString(4)), exp);
 
