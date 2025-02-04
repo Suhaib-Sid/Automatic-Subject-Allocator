@@ -54,10 +54,39 @@
             tr:nth-child(odd){
                 background-color: #eeeeee;
             }
+            
+            /* For Loader */
+            #loader {
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              z-index: 1;
+              width: 60px;
+              height: 60px;
+              margin: -76px 0 0 -76px;
+              border: 10px solid #f3f3f3;
+              border-radius: 50%;
+              border-top: 10px solid #3498db;
+              -webkit-animation: spin 2s linear infinite;
+              animation: spin 2s linear infinite;
+            }
+
+            @-webkit-keyframes spin {
+              0% { -webkit-transform: rotate(0deg); }
+              100% { -webkit-transform: rotate(360deg); }
+            }
+
+            @keyframes spin {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(360deg); }
+            }
+            
         </style>
         
     </head>
-    <body>
+    <body onload="myFunction()" style="margin:0;">   <!-- function for adding loader --> 
+        
+        <div id="loader"></div>
        
         <!--nav bar starts-->
         <nav class="navbar navbar-expand-lg navbar-inverse" style="height: 65px; background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%); border: 0; border-radius: 0">
@@ -86,7 +115,7 @@
         
         <div class="filter"></div>
         
-        <div style="display: flex; justify-content: center; height: 750px">
+        <div style="display: none; justify-content: center; height: 750px" id="content">
             <div style="width: 60%; height: fit-content; padding: 30px;" >
                 <!--<div style="text-align: center; margin-bottom: 10px" ><h1 style="display: inline" >Allocated Subjects</h1></div>-->
                 <header class="ScriptHeader">
@@ -121,5 +150,19 @@
                 
             </div>
         </div>
+        
+        <!-- script for adding loader -->
+        <script>
+            var myVar;
+
+            function myFunction() {
+              myVar = setTimeout(showPage, 3000);
+            }
+
+            function showPage() {
+              document.getElementById("loader").style.display = "none";
+              document.getElementById("content").style.display = "flex";
+            }
+        </script>
     </body>
 </html>
