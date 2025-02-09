@@ -1,3 +1,11 @@
+<%-- 
+    Document   : index
+    Created on : Feb 9, 2025, 7:23:22 PM
+    Author     : suhaib
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -82,3 +90,4 @@
 </body>
 
 </html>
+
